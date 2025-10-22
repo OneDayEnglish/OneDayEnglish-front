@@ -6,14 +6,17 @@ export default function Remind() {
   const [showAnswer, setShowAnswer] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  // 정답 확인
   const handleCheck = () => {
     setShowAnswer(true);
   };
 
+  // 단어 뜻 입력
   const handleInputChange = (e) => {
     setUserAnswer(e.target.value);
   };
 
+  // 다음 단어로 이동
   const handleNext = () => {
     if (currentIndex < englishWords.length - 1) {
       setCurrentIndex(currentIndex + 1);
@@ -22,6 +25,7 @@ export default function Remind() {
     }
   };
 
+  // 이전 단어로 이동
   const handlePrevious = () => {
     if (currentIndex > 0) {
       setCurrentIndex(currentIndex - 1);
