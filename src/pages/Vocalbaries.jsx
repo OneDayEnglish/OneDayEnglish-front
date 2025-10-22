@@ -52,7 +52,7 @@ export default function Vocabularies() {
     // 1. Context에서 영단어 목록(vocabulary)을 가져옵니다.
     // (파일 이름이 Vocabularies.jsx이지만, 기존 파일명이 Library여서 이름 변경 후 사용합니다.)
     const { vocabulary } = useContext(VocabularyContext);
-    
+
     // 2. 각 단어의 뜻이 보이는지 상태를 관리하는 State를 만듭니다.
     // { 0: false, 1: true, ... } 형태로 관리합니다.
     const [visibleMeanings, setVisibleMeanings] = useState({});
@@ -83,22 +83,22 @@ export default function Vocabularies() {
             <p style={{ textAlign: 'center', color: '#718096', marginBottom: '20px' }}>
                 단어를 클릭하면 뜻이 보입니다!
             </p>
-            
+
             <div style={styles.wordList}>
                 {vocabulary.map((word, index) => {
                     // 현재 단어의 뜻이 보여야 하는지 확인합니다.
                     const isMeaningVisible = visibleMeanings[index];
-                    
+
                     return (
-                        <div 
-                            key={index} 
+                        <div
+                            key={index}
                             style={styles.wordCard}
                             onClick={() => handleWordClick(index)} // 클릭 이벤트 추가
                         >
                             <div style={styles.englishWord}>
                                 {word.eng}
                             </div>
-                            
+
                             {/* 4. isMeaningVisible 상태에 따라 뜻 표시/숨김 */}
                             {isMeaningVisible && (
                                 <div style={styles.koreanMeaning}>
