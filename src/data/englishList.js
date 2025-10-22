@@ -1,0 +1,22 @@
+export const englishWords = [
+    { eng: "Develop", kr: ["개발하다", "발전시키다"] },
+    { eng: "Implement", kr: ["구현하다", "실행하다", "도구"] },
+    { eng: "Optimize", kr: ["최적화하다"] },
+    { eng: "Feature", kr: ["기능", "특징", "특별한 면"] },
+    { eng: "Component", kr: ["구성 요소", "부품", "요소"] },
+    { eng: "Navigate", kr: ["탐색하다", "길을 찾다", "이동하다"] },
+    { eng: "Resource", kr: ["자원", "재료", "공급원"] },
+    { eng: "Context", kr: ["문맥", "상황", "배경"] },
+    { eng: "Attribute", kr: ["속성", "특성", "자질"] },
+    { eng: "Validate", kr: ["유효성을 검증하다", "확인하다", "인정하다"] },
+    { eng: "Query", kr: ["질의하다", "질문", "조회하다"] },
+    { eng: "Retrieve", kr: ["되찾다", "검색하다", "회수하다"] },
+    { eng: "Async", kr: ["비동기", "비동기적인"] },
+    { eng: "Debounce", kr: ["디바운스 (호출 빈도 제한)", "지연시키다"] },
+    { eng: "Throttle", kr: ["스로틀 (호출 주기 제한)", "조르다"] },
+    { eng: "Constraint", kr: ["제약", "제한", "구속"] },
+    { eng: "Integrate", kr: ["통합하다", "결합하다", "합치다"] },
+    { eng: "Pipeline", kr: ["파이프라인", "일련의 과정", "송유관"] },
+    { eng: "Resilient", kr: ["회복력 있는", "탄력적인", "강인한"] },
+    { eng: "Paradigm", kr: ["패러다임", "모범", "사례"] }
+];
