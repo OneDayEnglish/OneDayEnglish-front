@@ -4,6 +4,7 @@ import { englishWords } from "../data/englishList";
 export default function Remind() {
   const [userAnswer, setUserAnswer] = useState("");
   const [showAnswer, setShowAnswer] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const handleCheck = () => {
     setShowAnswer(true);
@@ -11,6 +12,22 @@ export default function Remind() {
 
   const handleInputChange = (e) => {
     setUserAnswer(e.target.value);
+  };
+
+  const handleNext = () => {
+    if (currentIndex < englishWords.length - 1) {
+      setCurrentIndex(currentIndex + 1);
+      setShowAnswer(false);
+      setUserAnswer("");
+    }
+  };
+
+  const handlePrevious = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1);
+      setShowAnswer(false);
+      setUserAnswer("");
+    }
   };
 
   return (
@@ -23,7 +40,7 @@ export default function Remind() {
     >
       <h1 style={{ color: "#2D3748", marginBottom: "2rem" }}>🧠 리마인드</h1>
       <div style={{ textAlign: "center" }}>
-        <h2>{englishWords[0].eng}</h2>
+        <h2>{englishWords[currentIndex].eng}</h2>
         <div style={{ display: "flex", gap: "10px", justifyContent: "center" }}>
           <input
             type="text"
@@ -40,7 +57,19 @@ export default function Remind() {
             확인
           </button>
         </div>
-        {showAnswer && <p>정답: {englishWords[0].kr.join(", ")}</p>}
+        {showAnswer && <p>정답: {englishWords[currentIndex].kr.join(", ")}</p>}
+        <div style={{ marginTop: "20px" }}>
+          <button onClick={handlePrevious} disabled={currentIndex === 0}>
+            이전
+          </button>
+          <button
+            onClick={handleNext}
+            disabled={currentIndex === englishWords.length - 1}
+            style={{ marginLeft: "10px" }}
+          >
+            다음
+          </button>
+        </div>
       </div>
     </div>
   );
